@@ -1,4 +1,4 @@
-# bipolar disorder multi-omics analysis
+# Bipolar disorder multi-omics analysis
 # multi-omics analysis
 The pipeline of "Multi-omics analyses of serum metabolome, gut microbiome and brain function reveal dysregulated microbiota-gut-brain axis in bipolar disorder" analysis.
 
