@@ -1,8 +1,23 @@
-data1 = read.table("BD2_contig.profile",sep = "\t",check.names = F,
+suppressPackageStartupMessages(library(argparse))
+
+parser <- ArgumentParser()
+
+parser$add_argument("-i", help = "contig profile file, required")
+parser$add_argument("-l", help = "KO list file, required")
+parser$add_argument("-t", help = "sample phenotypes file, required")
+
+args <- parser$parse_args()
+
+
+infile <- file.path(args$i)
+KO_list <- file.path(args$l)
+inclass <- file.path(args$t)
+
+data1 = read.table(infile,sep = "\t",check.names = F,
                    stringsAsFactors = F,header = T,row.names = 1)
-data1_ann = read.csv("ko_list",sep = "\t",check.names = F,stringsAsFactors = F,
+data1_ann = read.csv(KO_list,sep = "\t",check.names = F,stringsAsFactors = F,
                        header = T)
-mapping = read.table("./mapping_file",sep = "\t",check.names = F,
+mapping = read.table(inclass,sep = "\t",check.names = F,
                      stringsAsFactors = F,header = T,row.names = 1)
 library(pROC)
 data1 = data1[,row.names(mapping)]
