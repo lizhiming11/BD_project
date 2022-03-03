@@ -1,11 +1,9 @@
-BM = read.table("../代谢组/数据/BM.txt",sep= "\t",check.names = F,
+BM = read.table("BM.txt",sep= "\t",check.names = F,
                 stringsAsFactors = F,header = T,row.names = 1)
-SGB = read.table("../BD2_SGB.profile",sep ='\t',check.names = F,
+SGB = read.table("BD2_SGB.profile",sep ='\t',check.names = F,
                  stringsAsFactors = F,header = T,row.names = 1)
-mapping = read.table("../mapping_file",sep = "\t",check.names = F,
+mapping = read.table("mapping_file",sep = "\t",check.names = F,
                      stringsAsFactors = F,header = T,row.names = 1)
-mapping = mapping[!row.names(mapping)%in%c("B1220","H3023","H3010","B1288","B1228","B1119","B1107","B1182"),]
-#mapping = mapping[mapping$GP=="HC",]
 BM = BM[,colnames(BM)%in%row.names(mapping)]
 mapping = mapping[colnames(BM),]
 
