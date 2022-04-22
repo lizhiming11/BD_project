@@ -17,7 +17,7 @@ quality control for samples including remove low quality reads and remove human 
 Quantification of KO and species/  
 KO and species abundance estimations.  
 
-aging-omics analyses/  
+Multi-omics analyses/  
 Statistical analysis script and multi-omics analysis script
 
 
